@@ -5,27 +5,25 @@ import java.util.Arrays;
 public class MergeSort {
 
     public static void main(String[] args) {
-        int[] unSortedArr = {43, 7, 1, 22 ,-17, 66, -9, 14,23,5};
-         mergeSort(unSortedArr, 0, unSortedArr.length);
-        Arrays.stream(unSortedArr).forEach(x -> System.out.print(x +"  "));
+        int[] unSortedArr = {43, 7, 1, 22, -17, 66, -9, 14, 23, 5};
+        mergeSort(unSortedArr, 0, unSortedArr.length);
+        Arrays.stream(unSortedArr).forEach(x -> System.out.print(x + "  "));
         System.out.println();
-        for (int x:unSortedArr) {
-            System.out.print(x+", ");
+        for (int x : unSortedArr) {
+            System.out.print(x + ", ");
         }
     }
 
-       public static void mergeSort(int[] intArray, int start, int end){
-
-        if(end - start < 2){
+    public static void mergeSort(int[] intArray, int start, int end) {
+        if (end - start < 2) {
             return;
         }
         int mid = (start + end) / 2;
         mergeSort(intArray, start, mid);
-        mergeSort(intArray, mid , end);
+        mergeSort(intArray, mid, end);
 
-        merge1(intArray, start, mid, end);
-
-       }
+        merge(intArray, start, mid, end);
+    }
 
     private static void merge1(int[] intArray, int start, int mid, int end) {
         if(intArray[mid-1] <= intArray[mid]){

@@ -25,7 +25,6 @@ public class SelectionSort {
             }
             swap(arr, largest,lastUnSortedIndex);
         }
-
     }
     private static void swap(int[] arr, int i, int j){
         if(i==j){

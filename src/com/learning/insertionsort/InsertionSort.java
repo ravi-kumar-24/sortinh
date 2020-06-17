@@ -14,17 +14,16 @@ public class InsertionSort {
         }
     }
 
-       public static void sort(int[] arr){
-        int totalIteration =0;
-        for (int firstUnSortedIndex = 1; firstUnSortedIndex < arr.length ; firstUnSortedIndex++) {
+    public static void sort(int[] arr){
+        for (int firstUnSortedIndex = 1; firstUnSortedIndex < arr.length ; firstUnSortedIndex++)
+        {
             int insertedElement = arr[firstUnSortedIndex];
             int i;
-            for (i = firstUnSortedIndex; i >0 && arr[i-1]>insertedElement ; i--) {
-               arr[i] = arr[i-1];
-                totalIteration++;
-            }
+                for (i = firstUnSortedIndex; i >0 && arr[i-1]>insertedElement ; i--)
+                {
+                      arr[i] = arr[i-1];
+                }
             arr[i] =insertedElement;
         }
-           System.out.println("Total Iteration"+totalIteration);
     }
 }
